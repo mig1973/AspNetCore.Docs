@@ -152,7 +152,7 @@ The preceding code can be written as:
        disabled="@(Model?.LicenseId == null)" />
 ```
 
-Normally, the `@` operator inserts a textual representation of an expression into the rendered HTML markup. However, when an expression evaluates to logical `false`, the framework removes the attribute instead. In the preceding example, the `disabled` attribute is removed if `Model` or `LicenseId` is `null`.
+Normally, the `@` operator inserts a textual representation of an expression into the rendered HTML markup. However, when an expression evaluates to logical `false`, the framework removes the attribute instead. In the preceding example, the `disabled` attribute is set to `true` if either `Model` or `LicenseId` is `null`.
 
 ## Tag helper initializers
 
@@ -275,7 +275,7 @@ The Visual Studio editor helps you write **all** of the markup in the Tag Helper
 
 * ASP.NET Web Server Controls have a non-trivial lifecycle that can make developing and debugging difficult.
 
-* Web Server controls allow you to add functionality to the client Document Object Model (DOM) elements by using a client control. Tag Helpers have no DOM.
+* Web Server controls allow you to add functionality to the client DOM elements by using a client control. Tag Helpers have no DOM.
 
 * Web Server controls include automatic browser detection. Tag Helpers have no knowledge of the browser.
 
