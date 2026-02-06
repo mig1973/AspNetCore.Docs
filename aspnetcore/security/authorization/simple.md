@@ -10,7 +10,7 @@ uid: security/authorization/simple
 
 <a name="security-authorization-simple"></a>
 
-Authorization in ASP.NET Core is controlled with <xref:Microsoft.AspNetCore.Authorization.AuthorizeAttribute> and its various parameters. In its most basic form, applying the `[Authorize]` attribute to a controller, action, or Razor Page, limits access to that component authenticated users.
+Authorization in ASP.NET Core is controlled with <xref:Microsoft.AspNetCore.Authorization.AuthorizeAttribute> and its various parameters. In its most basic form, applying the `[Authorize]` attribute to a controller, action, or Razor Page, limits access to that component to authenticated users.
 
 The following code limits access to the `AccountController` to authenticated users:
 
@@ -66,7 +66,9 @@ public class AccountController : Controller
 This would allow only authenticated users to the `AccountController`, except for the `Login` action, which is accessible by everyone, regardless of their authenticated or unauthenticated / anonymous status.
 
 > [!WARNING]
-> `[AllowAnonymous]` bypasses all authorization statements. If you combine `[AllowAnonymous]` and any `[Authorize]` attribute, the `[Authorize]` attributes are ignored. For example if you apply `[AllowAnonymous]` at the controller level, any `[Authorize]` attributes on the same controller (or on any action within it) is ignored.
+> `[AllowAnonymous]` bypasses authorization statements. If you combine `[AllowAnonymous]` and an `[Authorize]` attribute, the `[Authorize]` attributes are ignored. For example if you apply `[AllowAnonymous]` at the controller level:
+> * Any authorization requirements from `[Authorize]` attributes on the same controller or action methods on the controller are ignored.
+> * Authentication middleware is not short-circuited but doesn't need to succeed.
 
 The following code limits access to the `LogoutModel` Razor Page to authenticated users:
 

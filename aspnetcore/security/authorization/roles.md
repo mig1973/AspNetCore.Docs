@@ -76,7 +76,7 @@ For Razor Pages, [`[Authorize]`](xref:Microsoft.AspNetCore.Authorization.Authori
 
 ## Policy based role checks
 
-Role requirements can also be expressed using the Policy syntax, where a developer registers a policy at application startup as part of the Authorization service configuration. This typically occurs in in the `Program.cs` file:
+Role requirements can also be expressed using the Policy syntax, where a developer registers a policy at application startup as part of the Authorization service configuration. This typically occurs in the `Program.cs` file:
 
 [!code-csharp[](~/security/authorization/roles/samples/6_0/WebAll/Program.cs?name=snippet&highlight=6-10)]
 
@@ -127,6 +127,10 @@ If you apply multiple attributes then an accessing user must be a member of all 
 You can further limit access by applying additional role authorization attributes at the action level:
 
 [!code-csharp[](~/security/authorization/roles/samples/6_0/WebAll/Controllers/ControlAllPanelController.cs?name=snippet&highlight=1-2)]
+
+If multiple attributes are applied at the controller and action levels, ***all*** attributes must pass before access is granted:
+
+[!code-csharp[](~/security/authorization/roles/samples/6_0/WebAll/Controllers/ControlAllPanelController2.cs?name=snippet&highlight=1,7)]
 
 In the preceding `ControlAllPanelController` controller:
 

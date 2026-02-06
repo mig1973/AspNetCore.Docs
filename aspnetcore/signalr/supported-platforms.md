@@ -16,7 +16,7 @@ SignalR for ASP.NET Core supports any server platform that ASP.NET Core supports
 
 ## JavaScript client
 
-The [JavaScript client](xref:signalr/javascript-client) runs on the current [Node.js long-term support (LTS) release](https://nodejs.org/about/releases/) and the following browsers:
+The [JavaScript client](xref:signalr/javascript-client) runs on the current [Node.js long-term support (LTS) release](https://nodejs.org/en/download) and the following browsers:
 
 | Browser                          | Version         |
 | -------------------------------- | --------------- |
@@ -45,3 +45,5 @@ The following clients are available but are experimental or unofficial. The foll
 
 * [C++ client](https://github.com/aspnet/SignalR-Client-Cpp)
 * [Swift client](https://github.com/moozzyk/SignalR-Client-Swift)
+
+[!INCLUDE[](~/includes/SignalR/es6.md)]

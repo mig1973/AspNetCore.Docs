@@ -56,7 +56,7 @@ If you have a controller that's protected by the `[Authorize]` attribute, but wa
 
 [!code-csharp[](~/security/authorization/claims/samples/6.x/WebAll/Controllers/VacationController.cs?name=snippet&highlight=14)]
 
-Because policies can ***not*** be applied at the Razor Page handler level, we recommend using a controller when polices must be applied at the page handler level. The rest of the app that doesn't require policies at the Razor Page handler level can use Razor Pages.
+Because policies can ***not*** be applied at the Razor Page handler level, we recommend using a controller when policies must be applied at the page handler level. The rest of the app that doesn't require policies at the Razor Page handler level can use Razor Pages.
 
 Most claims come with a value. You can specify a list of allowed values when creating the policy. The following example would only succeed for employees whose employee number was 1, 2, 3, 4 or 5.
 
@@ -68,7 +68,7 @@ If the claim value isn't a single value or a transformation is required, use <xr
 
 ## Multiple Policy Evaluation
 
-If you apply multiple policies to a controller or action, then all policies must pass before access is granted. For example:
+If multiple policies are applied at the controller and action levels, ***all*** policies must pass before access is granted:
 
 [!code-csharp[](~/security/authorization/claims/samples/6.x/WebAll/Controllers/SalaryController.cs?name=snippet&highlight=1,14)]
 
